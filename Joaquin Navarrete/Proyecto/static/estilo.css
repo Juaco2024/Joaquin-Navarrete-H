@@ -1,0 +1,95 @@
+/* estilo.css */
+
+/* Estilo para las imágenes en las tarjetas */
+.card-img-top,
+.card-img-bottom {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+}
+
+/* Estilo para las tarjetas */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Asegura que la tarjeta ocupe todo el espacio disponible */
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd; /* Añade un borde sutil */
+    border-radius: 0.25rem; /* Redondea las esquinas */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Animación para el contenido de la tarjeta */
+.card-body h5,
+.card-body p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-body.show-content h5,
+.card-body.show-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para el header */
+header .logo {
+    max-width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+/* Estilo para el botón de volver */
+.btn-primary {
+    background-color: #007bff; /* Color del botón */
+    border-color: #007bff; /* Color del borde del botón */
+    animation: moveButton 1.5s ease-in-out infinite; /* Añade animación de movimiento */
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #343a40; /* Color de fondo del footer */
+    color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Animación para el título en el índice */
+.alert {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.alert.show-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación para los botones en el índice */
+.btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    animation: moveButton 1.5s ease-in-out infinite; /* Añade animación de movimiento */
+}
+
+.btn.show-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación de movimiento para los botones */
+@keyframes moveButton {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
